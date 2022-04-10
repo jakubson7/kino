@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Merriweather&family=Monoton&family=Parisienne&family=Supermercado+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  font-family: "Merriweather", serif;
+}
+
+main {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  grid-template-rows: repeat(8, calc(100vh / 8));
+}
+
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: repeat(6, calc(100vw / 6));
+  }
+}

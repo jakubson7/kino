@@ -1,0 +1,140 @@
+main.bnw {
+  background-color: #000000;
+
+  /*
+    c - h1.cinema
+    w - h1.white
+    b - h1.black
+    i - img.filmman
+    s - img.screenplay
+  */
+  grid-template-areas:
+    ". . . ."
+    "c c c c"
+    "w w w w"
+    "i i b b"
+    "i i . ."
+    "i i . ."
+    "s s s s"
+    "s s s s";
+}
+
+.bnw h1 {
+  font-family: "Monoton";
+  font-size: 4rem;
+  align-self: center;
+  text-align: center;
+  z-index: 20;
+  color: #ffffff;
+}
+
+.bnw .cinema {
+  grid-area: c;
+  align-self: center;
+}
+
+.bnw .white {
+  grid-area: w;
+  color: #000000;
+  transform: translate(20vw, 57vh) rotate(-45deg);
+}
+.bnw .black {
+  grid-area: b;
+  grid-column-start: 1;
+  transform: translateX(100vw);
+}
+
+.bnw .white-box {
+  grid-area: w;
+  background-color: #ffffff;
+  transform: translateX(100vw);
+}
+
+.bnw .filmman {
+  grid-area: i;
+
+  width: 50vw;
+  min-width: 40vh;
+  max-width: 500px;
+  z-index: 10;
+
+  transform: rotate(45deg) translateX(-12vh);
+}
+
+.bnw .screenplay {
+  grid-area: s;
+  grid-row-end: 6;
+
+  width: 100vw;
+  height: 37.5vh;
+
+  object-fit: cover;
+  transform: translate(40vw, 14vh) rotate(-45deg);
+}
+
+.bnw .screenplay,
+.bnw .filmman,
+.bnw h1 {
+  transition: transform 1s ease-in-out;
+}
+
+.bnw .white-box {
+  transition: transform 0.5s ease-in-out 1s;
+}
+
+.bnw--active .white-box,
+.bnw--active .screenplay,
+.bnw--active .white,
+.bnw--active .black {
+  transform: none;
+}
+
+.bnw--active .filmman {
+  animation: filmman-transition 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.bnw--active .screenplay {
+  animation: screenplay-transition 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes filmman-transition {
+  0% {
+    transform: rotate(45deg) translateX(-12vh);
+  }
+  50% {
+    transform: rotate(45deg) translate(-10vh, 10vh);
+  }
+  100% {
+    transform: rotate(0) translate(-10vh, 10vh);
+  }
+}
+@keyframes screenplay-transition {
+  0% {
+    transform: translate(40vw, 14vh) rotate(-45deg);
+  }
+  50% {
+    transform: translate(0vw, 40vh) rotate(0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@media (min-width: 600px) {
+  main.bnw {
+    grid-template-areas:
+      ". . . . . ."
+      "c c c c c c"
+      "w w w w w w"
+      "i i b b b b"
+      "i i . . . ."
+      "i i . . . ."
+      "s s s s s s"
+      "s s s s s s";
+  }
+  .filmman {
+    height: 100vh;
+  }
+}
