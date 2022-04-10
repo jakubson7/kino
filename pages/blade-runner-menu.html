@@ -10,7 +10,7 @@
   </head>
   <body>
     <main class="menu">
-      <header>Soy Cuba</header>
+      <header>Blade Runner</header>
       <nav>
         <a href="./soy-cuba-menu.html"><div>Soy Cuba</div></a>
         <a href="./french-dispatch-menu.html"><div>French Dispatch</div></a>
@@ -20,9 +20,9 @@
         <a href="./tree-of-life-menu.html"><div>Tree of Life</div></a>
       </nav>
       <div class="poster">
-        <h1>Soy Cuba</h1>
+        <h1>Blade Runner</h1>
         <img
-          src="../img/soy-cuba/3.webp"
+          src="../img/blade-runner/1.webp"
           alt="Poster of the cuban classic film, Soy Cuba"
         />
       </div>
@@ -30,12 +30,21 @@
 
     <style>
       main {
-        background-color: #000000;
+        background-color: #012428;
       }
       header,
       nav div,
       .poster h1 {
-        color: #ffffff;
+        color: #be7f4c;
+      }
+
+      .poster h1,
+      header {
+        font-family: "Righteous", cursive;
+      }
+
+      nav div.active::before {
+        background-color: #be7f4c;
       }
     </style>
   </body>

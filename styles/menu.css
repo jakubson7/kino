@@ -17,10 +17,13 @@ main.menu {
 header {
   grid-area: h;
   align-self: center;
-  font-size: 3rem;
   font-family: "Parisienne", cursive;
   transform: rotate(90deg);
   padding-top: 10vw;
+  font-size: calc(1rem + 3vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav {
@@ -49,7 +52,6 @@ nav div.active::before {
   width: 2px;
   height: 3rem;
   border-radius: 4px;
-  background-color: #ffffff;
 }
 
 .poster {
@@ -71,8 +73,7 @@ nav div.active::before {
 }
 .poster h1 {
   z-index: 10;
-  font-family: "Parisienne", cursive;
-  font-size: 4rem;
+  font-size: calc(2rem + 4vw);
 }
 
 @media (min-width: 600px) {
